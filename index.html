@@ -1,0 +1,479 @@
+<!DocType html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+        <style>
+        .container {
+            display: flex;
+        }
+        .column {
+            flex: 1;
+            padding: 2%;
+        }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides">
+                <section data-transition="none">
+                    <h1 class="fragment fade-in-then-semi-out">
+                        <span class="fragment strike">Test Driven Development</span>
+                    </h1>
+                    <h1 class="fragment">How to <span class="fragment strike">fali</span></h1>
+                    <h1 class="fragment">fail</h1>
+                </section>
+                <section data-background="images/daniel.png">
+                    <h2 style="-webkit-text-stroke: 2px black">Daniel Brownridge</h2>
+                    <span style="-webkit-text-stroke: 2px black">daniel@freshnewpage.com</span>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Talk ~30 mins</p>
+                    <p class="fragment fade-in-then-semi-out">Demo ~15 mins</p>
+                    <p class="fragment fade-in-then-semi-out">Q&amp;A ~15 mins</p>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Who is this talk for?</p>
+                    <p class="fragment fade-in-then-semi-out">Anyone who writes any kind of code for any reason.</p>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Minimal Background Knowledge</p>
+                    <p class="fragment fade-in-then-semi-out">What is Test Driven Development?</p>
+                    <p class="fragment fade-in-then-semi-out">Why?</p>
+                    <p class="fragment fade-in-then-semi-out">History</p>
+                    <p class="fragment fade-in-then-semi-out">Implications</p>
+                    <p class="fragment fade-in-then-semi-out">Experience</p>
+                </section>
+
+                <section>
+                    What do you need to know about software testing? 
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out" data-fragment-index="1">What is a software test?</p>
+                    <p class="fragment" data-fragment-index="2">Some check that can either:
+                    <div class="container">
+                        <div class="column">
+                            <h3 class="fragment" data-fragment-index="3">
+                                <span class="fragment highlight-red" data-fragment-index="5">FAIL</span></h3>
+                        </div>
+                        <span class="fragment" data-fragment-index="4">or</span>
+                        <div class="column">
+                            <h3 class="fragment" data-fragment-index="4">
+                                <span class="fragment highlight-green" data-fragment-index="5">PASS</span></h3>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <div class="container">
+                        <div class="column">
+                            <h3 class="fragment fade-in-then-semi-out">Manual</h3>
+                        </div>
+                        <div class="column">
+                            <h3 class="fragment fade-in-then-semi-out">Automated</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Automated</h3>
+                    <p class="fragment fade-in-then-semi-out">The test is also code.</p>
+                    <pre>
+                    <code data-line-numbers data-trim class="hljs python fragment">
+                    def test_plus():
+                        assert 1 + 1 == 2
+                    </code>
+                    </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <div class="container">
+                        <div class="column">
+                            <h3 class="fragment fade-in-then-semi-out" data-id="functional">Functional</h3>
+                            <ul>
+                            <li data-id="acceptance" class="fragment fade-in-then-semi-out">Acceptance</li>
+                            <li class="fragment fade-in-then-semi-out">Smoke</li>
+                            <li class="fragment fade-in-then-semi-out">Integration</li>
+                            <li class="fragment fade-in-then-semi-out">System</li>
+                            <li class="fragment fade-in-then-semi-out">Interface</li>
+                            <li class="fragment fade-in-then-semi-out">Regression</li>
+                            <li class="fragment fade-in-then-semi-out">Unit</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h3 class="fragment fade-in-then-semi-out">NON FUNCTIONAL</h3>
+                            <ul>
+                            <li class="fragment fade-in-then-semi-out">Documentation</li>
+                            <li class="fragment fade-in-then-semi-out">Installation</li>
+                            <li class="fragment fade-in-then-semi-out">Performance</li>
+                            <li class="fragment fade-in-then-semi-out">Load</li>
+                            <li class="fragment fade-in-then-semi-out">Stress</li>
+                            <li class="fragment fade-in-then-semi-out">Endurance</li>
+                            <li class="fragment fade-in-then-semi-out">Spike</li>
+                            <li class="fragment fade-in-then-semi-out">Reliability</li>
+                            <li class="fragment fade-in-then-semi-out">Security</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="functional" class="fragment fade-out" data-fragment-index="1">Functional</h3>
+                    <ul>
+                        <li data-id="acceptance"><span class="fragment strike" data-fragment-index="1">
+                                <span class="fragment fade-out">Acceptance</span></span> <span class="fragment" data-fragment-index="1">Functional</span></li>
+                    <li>Unit</li>
+                    </ul>
+                </section>
+                <section data-auto-animate>
+                    <ul>
+                    <li data-id="acceptance">Functional</li>
+                    <li>Unit</li>
+                    </ul>
+                </section>
+                <section data-auto-animate>
+                    <ul>
+                    <li data-id="functional">Functional</li>
+                    <li>Integrated</li>
+                    <li>Unit</li>
+                    </ul>
+                </section>
+
+
+                <section data-auto-animate>
+                    <p>Functional Tests</p>
+                    <p class="fragment fade-in-then-semi-out">A.K.A.</p>
+                    <p class="fragment fade-in-then-semi-out">End-to-end Tests</p>
+                    <p class="fragment fade-in-then-semi-out">Acceptance Tests</p>
+                    <p class="fragment fade-in-then-semi-out">Black Box Tests</p>
+                </section>
+
+                <section data-auto-animate>
+                    <p>Functional Tests</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </section>
+                <section data-auto-animate>
+                    <p>Functional Tests</p>
+                    <p class="fragment fade-in-then-semi-out">Test the functionality of a system</p>
+                    <p class="fragment fade-in-then-semi-out">Treat implementation as a Black-Box</p>
+                    <p class="fragment fade-in-then-semi-out">Do not reference or <em>see</em> the source code</p>
+                    <p class="fragment fade-in-then-semi-out">Can be written in any programming language</p>
+                    <p class="fragment fade-in-then-semi-out">Can be packaged and run separately</p>
+                </section>
+
+                <section data-auto-animate>
+                    <p data-id="functional">Unit Tests</p>
+                    <p class="fragment fade-in-then-semi-out">Test an individual unit or piece of code</p>
+                    <p class="fragment fade-in-then-semi-out">Focus on a specific function or class</p>
+                    <p class="fragment fade-in-then-semi-out">Require access to the source code</p>
+                    <p class="fragment fade-in-then-semi-out">Written in the same language as code under test</p>
+                </section>
+                <section data-auto-animate>
+                    <p data-id="functional">Unit Tests</p>
+                    <div class="container">
+                        <div class="column">
+                            <p class="fragment fade-in-then-semi-out" data-id="pure">(Pure)Unit Tests</p>
+                        </div>
+                        <div class="column">
+                            <p class="fragment fade-in-then-semi-out" data-id="integrated">Integrated (Unit) Tests</p>
+                        </div>
+                    </div>
+                </section>
+                <section data-auto-animate>
+                    <div class="container">
+                        <div class="column">
+                            <p data-id="pure">Unit Tests</p>
+                            <p class="fragment fade-in-then-semi-out">Strictly test one function or class</p>
+                        </div>
+                        <div class="column">
+                            <p data-id="integrated">Integrated Tests</p>
+                            <p class="fragment fade-in-then-semi-out">Test collaborating pieces of code</p>
+                        </div>
+                    </div>
+                    <p class="fragment fade-in-then-semi-out">Both require access to code</p>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">What is Test Driven Development?</p>
+                    <p class="fragment fade-in-then-semi-out">It is development that is driven by tests!</p>
+                </section>
+
+                <section>
+                    <h1>The End</h1>
+                    <p class="fragment">just kidding!</p>
+                </section>
+
+
+                <section>
+                <section data-auto-animate>
+                    <h3 class="fragment fade-in-then-semi-out" data-fragment-index="1">Basic Loop of TDD</h3>
+                    <ol>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="2">Write a test</li>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="3">See it <span class="fragment highlight-red" data-fragment-index="3">FAIL</span></li>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="4">Write minimum possible code</li>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="5">See it <span class="fragment highlight-green" data-fragment-index="4">PASS</span></li>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="7">REFACTOR</li>
+                      <li class="fragment fade-in-then-semi-out" data-fragment-index="8">Go back to 1. and repeat until done.</li>
+                    </ol>
+                </section>
+
+                <section data-auto-animate>
+                      <li>See it <span style="color: red;">FAIL</span></li>
+                      <li>See it <span style="color: lime;">PASS</span></li>
+                      <li>REFACTOR</li>
+                </section>
+
+                <section data-auto-animate>
+                    <p><span style="color: red;">RED</span> - <span style="color: lime;">GREEN</span> - REFACTOR</p>
+                </section>
+
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="">Basic Loop of TDD</h3>
+                    <img class="" src="images/basic_loop.png"></img>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="fragment fade-in-then-semi-out">Chicago Style</h3>
+                    <p class="fragment fade-in-then-semi-out">A.K.A.</p>
+                    <p class="fragment fade-in-then-semi-out">Inside Out</p>
+                    <p class="fragment fade-in-then-semi-out">Bottom Up</p>
+                    <p class="fragment fade-in-then-semi-out">Classic</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="">Chicago Style</h3>
+                    <p class="fragment fade-in-then-semi-out">Starts at Unit test level</p>
+                    <p class="fragment fade-in-then-semi-out">Build from components / classes upwards</p>
+                    <p class="fragment fade-in-then-semi-out">Developer focuses on one thing at a time</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="fragment fade-in-then-semi-out">London Style</h3>
+                    <p class="fragment fade-in-then-semi-out">A.K.A.</p>
+                    <p class="fragment fade-in-then-semi-out">Outside In</p>
+                    <p class="fragment fade-in-then-semi-out">Top Down</p>
+                    <p class="fragment fade-in-then-semi-out">Mockist</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="">London Style</h3>
+                    <p class="fragment fade-in-then-semi-out">Starts at Functional test level</p>
+                    <p class="fragment fade-in-then-semi-out">Works inward to Unit test level</p>
+                    <p class="fragment fade-in-then-semi-out">Can use Mocks for components not-yet-implemented</p>
+                    <p class="fragment fade-in-then-semi-out">Implementation of class/components left to last moment</p>
+                    <p class="fragment fade-in-then-semi-out">At least <u>two</u> tests for every feature!</p>
+                    <h3 class="fragment fade-in-then-semi-out">Double Loop</h3>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="">Double Loop</h3>
+                    <ol>
+                      <li class="fragment fade-in-then-semi-out">Start with outer Functional TDD loop</li>
+                      <li class="fragment fade-in-then-semi-out">Functional Test <span style="color: red;">FAIL</li>
+                      <li class="fragment fade-in-then-semi-out">Move to inner Unit TDD loop</li>
+                      <li class="fragment fade-in-then-semi-out">Unit Test <span style="color: red;">FAIL</li>
+                      <li class="fragment fade-in-then-semi-out">Code</li>
+                      <li class="fragment fade-in-then-semi-out">Unit Test <span style="color: lime;">PASS</li>
+                      <li class="fragment fade-in-then-semi-out">Repeat inner loop</li>
+                      <li class="fragment fade-in-then-semi-out">Functional Test <span style="color: lime;">PASS</li>
+                      <li class="fragment fade-in-then-semi-out">Repeat outer loop</li>
+                    </ol>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 class="">Double Loop</h3>
+                    <img class="" src="images/double_loop.png" width="70%"></img>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">But what if you don't know what you're doing?</p>
+                    <h3 class="fragment fade-in-then-semi-out">Code Spike</h3>
+                    <p class="fragment fade-in-then-semi-out">Do a little code experiment on the side.</p>
+                    <p class="fragment fade-in-then-semi-out">Throw it away.</p>
+                    <p class="fragment fade-in-then-semi-out">Now do it again with TDD.</p>
+
+                  <blockquote class="fragment fade-in-then-semi-out">
+                      &ldquo;plan to throw one away; you will, anyhow.&rdquo;
+                      Frederick Brooks Jr.
+                  </blockquote>
+                </section>
+
+                <section>
+                    <p>What it's not:</p>
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out"><span class="fragment strike">Agile</span></li>
+                        <li class="fragment fade-in-then-semi-out"><span class="fragment strike">a type of software testing</span></li>
+                        <li class="fragment fade-in-then-semi-out"><span class="fragment strike">a testing framework</span></li>
+                        <li class="fragment fade-in-then-semi-out"><span class="fragment strike">just writing tests before code</span></li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="fragment">Why?</p>
+                    <p class="fragment fade-in-then-semi-out">Value</p>
+                    <img src="images/Automation-Pyramid.jpg" class="fragment fade-in-then-semi-out"></img>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="">Why?</p>
+                    <h2 class="fragment fade-in-then-semi-out">Refactoring</h2>
+                    <p class="fragment fade-in-then-semi-out">From hardly ever done ...</p>
+                    <p class="fragment fade-in-then-semi-out">... to standard practice.</p>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Where did TDD come from?</p>
+                </section>
+
+                <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                    <h2>Waterfall</h2>
+                    <div class="r-hstack justify-centre" style="margin-top: -200px;">
+                        <div data-id="box1" style="background: #73aa8e; width: 260px; height: 50px; padding: 5px; margin: 0px 5px 10px 5px; border-radius: 5px;">Requirements</div>
+                        <div data-id="box2" style="background: #73aa8e; width: 160px; height: 50px; padding: 5px; margin: 110px 5px 10px 5px; border-radius: 5px;">Analysis</div>
+                        <div data-id="box2" style="background: #73aa8e; width: 160px; height: 50px; padding: 5px; margin: 220px 5px 10px 5px; border-radius: 5px;">Design</div>
+                        <div data-id="box3" style="background: #73aa8e; width: 160px; height: 50px; padding: 5px; margin: 330px 5px 10px 5px; border-radius: 5px;">Coding</div>
+                        <div data-id="box4" style="background: #73aa8e; width: 160px; height: 50px; padding: 5px; margin: 440px 5px 10px 5px; border-radius: 5px;">Testing</div>
+                        <div data-id="box5" style="background: #73aa8e; width: 260px; height: 50px; padding: 5px; margin: 550px 5px 10px 5px; border-radius: 5px;">Operations</div>
+                    </div>
+                </section>
+
+                <section data-background="images/Extreme_Programming_Dark.png" data-background-opacity="0.1">
+                    <h2 class="fragment fade-in-then-semi-out">eXtreme Programming (XP)</h2>
+                    <p class="fragment fade-in-then-semi-out">Idea of small iterations</p>
+                    <p class="fragment fade-in-then-semi-out">Idea of writing test before code</p>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="fragment fade-in-then-semi-out">Implications</p>
+                    <p class="fragment fade-in-then-semi-out">You will write different code.</p>
+                    <p class="fragment fade-in-then-semi-out">Always thinking <em>How would I test that?</em></p>
+                    <p class="fragment fade-in-then-semi-out">Leads to objectively better code</p>
+                    </p>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="">Implications</p>
+                    <p class="fragment fade-in-then-semi-out">Need debuggers less.</p>
+                    <p class="fragment fade-in-then-semi-out">Not writing tests feels weird.</p>
+                    <p class="fragment fade-in-then-semi-out">Mindset change</p>
+                </section>
+
+                <section>
+                    When can you justify not writing tests?
+                </section>
+
+                <section>
+                    <p>If the code will only ever be run ...</p>
+                    <p class="fragment">... not in production, </p>
+                    <p class="fragment">... just by you, </p>
+                    <p class="fragment">... today. </p>
+                    <p class="fragment">Then <em>mabye</em> consider skipping writing tests.</p>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Experience</p>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="fragment fade-in-then-semi-out">How to do it well?</p>
+                    <p class="fragment fade-in-then-semi-out">Start with English</p>
+                    <p class="fragment fade-in-then-semi-out">Then test</p>
+                    <p class="fragment fade-in-then-semi-out">Then code</p>
+                </section>
+
+                <section data-auto-animate>
+                    <p class="">How to do it well?</p>
+                    <p class="fragment fade-in-then-semi-out">The hardest aspect of programming is naming things.</p>
+                    <p class="fragment fade-in-then-semi-out">Clarity about the purpose of the test.</p>
+                  <blockquote class="fragment fade-in-then-semi-out">
+                      &ldquo; I'm just a soul whose intentions are good<br />
+                       Oh Lord, please don't let me be misunderstood&rdquo;
+                  </blockquote>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">xUnit</p>
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">JUnit</li>
+                        <li class="fragment fade-in-then-semi-out">PyTest – even if you don’t use Python</li>
+                        <li class="fragment fade-in-then-semi-out">ShUnit</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p class="fragment fade-in-then-semi-out">Continuous Integration</p>
+                    <p class="fragment fade-in-then-semi-out">Run tests locally.</p>
+                    <p class="fragment fade-in-then-semi-out">Commit</p>
+                    <p class="fragment fade-in-then-semi-out">Run tests in CI.</p> 
+                    <ul>
+                        <li class="fragment fade-in-then-semi-out">Jenkins</li>
+                        <li class="fragment fade-in-then-semi-out">Travis CI</li>
+                        <li class="fragment fade-in-then-semi-out">GitHub Actions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Demo</h3>
+                </section>
+
+
+                <section data-background-iframe="https://www.obeythetestinggoat.com/">
+                    <div style="position: absolute; width: 50%; background-color: black;">
+                    <p>Test-Driven Development with Python</p>
+                    <p>Harry Percival</p>
+                    <p><a href="https://www.obeythetestinggoat.com/">obeythetestinggoat.com</a></p>
+                    </div>
+                </section>
+                <section data-background-iframe="https://www.youtube.com/embed/eOYal8elnZk">
+                    <div style="position: absolute; width: 50%; background-color: black;">
+                    <p>Boundaries</p>
+                    <p>Gary Bernhardt</p>
+                    <p><a href="https://youtu.be/eOYal8elnZk">youtu.be/eOYal8elnZk</a></p>
+                    </div>
+                </section>
+                <section data-background-iframe="https://testdouble.com/">
+                    <div style="position: absolute; width: 70%; background-color: black;">
+                    <p>Test Double - Wiki</p>
+                    <p><a href="https://github.com/testdouble/contributing-tests/wiki/Test-Driven-Development">github.com/testdouble/contributing-tests/wiki/</a></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="dist/reveal.js" type="text/javascript"></script>
+        <script src="plugin/notes/notes.js" type="text/javascript"></script>
+        <script src="plugin/markdown/markdown.js" type="text/javascript"></script>
+        <script src="plugin/highlight/highlight.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>
